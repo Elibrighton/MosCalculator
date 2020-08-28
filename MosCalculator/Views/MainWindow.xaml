@@ -1,0 +1,35 @@
+﻿<Window x:Class="MosCalculator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vms="clr-namespace:MosCalculator"
+        mc:Ignorable="d"
+        Title="MOS Calculator" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding Path=ListOfCompanies}" Grid.Row="0" Grid.Column="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Company" Width="300" DisplayMemberBinding="{Binding Name}"  />
+                    <GridViewColumn Header="Code" Width="75" DisplayMemberBinding="{Binding Stock.Code}" />
+                    <GridViewColumn Header="Price" Width="75" DisplayMemberBinding="{Binding Stock.Price}" />
+                    <GridViewColumn Header="TTM EPS" Width="75" DisplayMemberBinding="{Binding Stock.TtmEps}" />
+                    <GridViewColumn Header="EPS" Width="75" DisplayMemberBinding="{Binding Stock.Eps}" />
+                    <GridViewColumn Header="PE ratio" Width="75" DisplayMemberBinding="{Binding Stock.PeRatio}" />
+                    <GridViewColumn Header="Fair price" Width="75" DisplayMemberBinding="{Binding Stock.Valuation.FairPrice}" />
+                    <GridViewColumn Header="Buy price" Width="75" DisplayMemberBinding="{Binding Stock.Valuation.BuyPrice}" />
+                    <GridViewColumn Header="Percent diff" Width="75" DisplayMemberBinding="{Binding Stock.PercentageDiff}" />
+                    <GridViewColumn Header="Decision" Width="75" DisplayMemberBinding="{Binding Stock.Decision}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="1" Grid.Column="0" Command="{Binding CheckButtonCommand}" IsEnabled="{Binding CheckButtonEnabled}">Check</Button>
+    </Grid>
+</Window>

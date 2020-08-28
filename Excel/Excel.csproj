@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelInterface\ExcelInterface.csproj" />
+    <ProjectReference Include="..\InteropExcelWrapperInterface\InteropExcelWrapperInterface.csproj" />
+    <ProjectReference Include="..\WebInterface\WebInterface.csproj" />
+  </ItemGroup>
+
+</Project>
